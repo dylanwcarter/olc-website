@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawings - Owen Carter</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Hamburger Menu -->
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler" />
+      <div class="hamburger"><div></div></div>
+      <div class="menu">
+        <div>
+          <div>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="drawings.html">Drawings</a></li>
+              <li><a href="photography.html">Photography</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawings Gallery Content -->
+    <div class="container">
+      <h1>My Drawings</h1>
+      <div class="gallery" id="gallery" data-folder="drawings">
+        <!-- Images will be dynamically added here -->
+      </div>
+      <div class="pagination">
+        <button id="prevPage">Previous</button>
+        <select id="pageSelect">
+          <!-- Options will be dynamically added here -->
+        </select>
+        <button id="nextPage">Next</button>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

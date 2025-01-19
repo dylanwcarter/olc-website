@@ -3,25 +3,44 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f0f4f8; /* Soft blue background */
+    color: #2d3a4b; /* Dark blue-gray text */
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 80px 20px 20px; /* Add top padding to avoid overlap */
     text-align: center;
 }
 
 h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #2d3a4b; /* Dark blue-gray */
 }
 
 p {
     font-size: 1.2rem;
     line-height: 1.6;
+    color: #4a5568; /* Medium gray */
+}
+
+/* Landing Page Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container h1,
+.container p {
+    animation: fadeIn 1.5s ease-out;
 }
 
 /* Hamburger Menu */
@@ -49,7 +68,7 @@ p {
     left: 0;
     width: 50px;
     height: 50px;
-    background: #333;
+    background: #2f855a; /* Darker green */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -60,7 +79,7 @@ p {
 .hamburger > div {
     width: 60%;
     height: 3px;
-    background: #fff;
+    background: #fff; /* White for contrast */
     position: relative;
     transition: all 0.4s ease;
 }
@@ -108,10 +127,9 @@ p {
 }
 
 .menu > div {
-    background: rgba(51, 51, 51, 0.9);
-    border-radius: 50%;
-    width: 200vw;
-    height: 200vw;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background: rgba(47, 133, 90, 0.95); /* Semi-transparent darker green */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,7 +174,7 @@ p {
 }
 
 .menu ul li a:hover {
-    color: #ff6347;
+    color: #c6f6d5; /* Light green for hover */
 }
 
 /* Gallery Styles */
@@ -190,19 +208,18 @@ p {
     font-size: 1rem;
     cursor: pointer;
     border: none;
-    background-color: #333;
+    background-color: #2f855a; /* Darker green */
     color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .pagination button:hover {
-    background-color: #555;
+    background-color: #276749; /* Even darker green for hover */
 }
 
 .pagination button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
+    background-color: #a0aec0; /* Gray for disabled state */
 }
 
 #pageSelect {
@@ -210,4 +227,7 @@ p {
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #2f855a; /* Darker green border */
+    color: #2d3a4b; /* Dark blue-gray text */
 }

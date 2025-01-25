@@ -19,8 +19,8 @@ async function fetchImageData() {
         if (!response.ok) {
             throw new Error('Failed to fetch image list');
         }
-        const data = await response.json();
-        return data.images; // Array of image URLs
+        const data = await response.json(); // Directly parse the JSON array
+        return data; // Return the array of image filenames
     } catch (error) {
         console.error('Error fetching image data:', error);
         return [];

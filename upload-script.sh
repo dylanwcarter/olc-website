@@ -21,10 +21,17 @@ IMAGES_DIR="$REPO_DIR/assets/images/$FOLDER"
 echo "Moving $FILE to $FOLDER folder..."
 mv "$FILE" "$IMAGES_DIR/"
 
+# Get the filename of the moved image
+FILENAME=$(basename "$FILE")
+
 # Update the image-list.json file
 echo "Updating image-list.json..."
 cd "$IMAGES_DIR"
-ls *.jpg *.png > image-list.json
+
+# Check if the image is already in the list
+if ! grep -Fxq "$FILENAME" image-list.json; then
+    echo "$FILENAME" >> image-list.json
+fi
 
 # Commit and push changes to GitHub
 echo "Committing and pushing changes to GitHub..."

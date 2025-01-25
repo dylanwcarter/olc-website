@@ -28,9 +28,18 @@ FILENAME=$(basename "$FILE")
 echo "Updating image-list.json..."
 cd "$IMAGES_DIR"
 
+# Create or update the JSON file
+if [ ! -f image-list.json ]; then
+    # Create a new JSON array if the file doesn't exist
+    echo "[]" > image-list.json
+fi
+
 # Check if the image is already in the list
-if ! grep -Fxq "$FILENAME" image-list.json; then
-    echo "$FILENAME" >> image-list.json
+if ! grep -Fq "\"$FILENAME\"" image-list.json; then
+    # Add the new filename to the JSON array
+    TEMP_FILE=$(mktemp)
+    jq --arg filename "$FILENAME" '. += [$filename]' image-list.json > "$TEMP_FILE"
+    mv "$TEMP_FILE" image-list.json
 fi
 
 # Commit and push changes to GitHub

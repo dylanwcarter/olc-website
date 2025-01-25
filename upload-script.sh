@@ -45,6 +45,7 @@ fi
 # Commit and push changes to GitHub
 echo "Committing and pushing changes to GitHub..."
 cd "$REPO_DIR"
+git pull
 git add .
 git commit -m "Upload new image to $FOLDER"
 git push

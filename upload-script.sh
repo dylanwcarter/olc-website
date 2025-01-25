@@ -14,14 +14,14 @@ FILE="$1"
 FOLDER="$2"
 
 # Path to the repository
-REPO_DIR="$HOME/dont-touch/olc-website" # Update this to the path of your repo
+REPO_DIR="$HOME/.dont-touch/olc-website" # Update this to the path of your repo
 IMAGES_DIR="$REPO_DIR/assets/images/$FOLDER"
 
-# Move the file to the appropriate folder
-echo "Moving $FILE to $FOLDER folder..."
-mv "$FILE" "$IMAGES_DIR/"
+# Copy the file to the appropriate folder (instead of moving it)
+echo "Copying $FILE to $FOLDER folder..."
+cp "$FILE" "$IMAGES_DIR/"
 
-# Get the filename of the moved image
+# Get the filename of the copied image
 FILENAME=$(basename "$FILE")
 
 # Update the image-list.json file
